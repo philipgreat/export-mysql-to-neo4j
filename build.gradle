@@ -1,0 +1,26 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+  
+repositories {  
+    jcenter() 
+}  
+    
+configurations {
+    moduleDependency
+}
+
+dependencies {
+	  compile 'org.neo4j.driver:neo4j-java-driver:1.2.1'
+	  compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.41'
+}
+
+task createJavaProject << {
+    sourceSets*.java.srcDirs*.each{ it.mkdirs() }
+    sourceSets*.resources.srcDirs*.each{ it.mkdirs()}
+}
+
+task saveDependencies(type: Copy) {
+  from configurations.moduleDependency
+  into 'lib' 
+}
