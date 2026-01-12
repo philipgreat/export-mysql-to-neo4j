@@ -121,7 +121,7 @@ public class Neo4JRelationImporter extends MySQLDataTraveler{
 		
 	}
 	
-	/*
+	/* c   b a 
 	 * 关系表示方法  {
 	 * 	table_name: {
 	 * 		fieldName: relation

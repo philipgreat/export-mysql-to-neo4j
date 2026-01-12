@@ -116,7 +116,19 @@ public class MySQLDataTraveler {
 		
         
 	}
-	
+	protected String getType(String tableName){
+		String  []segs  = tableName.split("_");
+		
+		String ret="";
+		for(int i=0;i<segs.length-1;i++){
+			
+			ret = ret + segs[i].substring(0,1).toUpperCase()+segs[i].substring(1);
+		}
+		return ret;
+		
+		
+		
+	}
 	
 	
 
